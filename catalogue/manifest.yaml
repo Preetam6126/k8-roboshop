@@ -1,0 +1,40 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: catalogue
+  labels:
+    name: catalogue
+    tier: app
+spec:
+  containers:
+  - image: preetam6126/catalogue:v1
+    imagePullPolicy: Always
+    name: catalogue
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "100m"
+      limits:
+        memory: "128Mi"
+        cpu: "100m"
+    ports:
+    - containerPort: 80
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: catalogue-service
+spec:
+  type: LoadBalancer
+  selector:
+    name: catalogue
+    tier: app
+  ports:
+    - protocol: TCP
+      port: 8080
+      targetPort: 8080
+  
+  
+
+      
