@@ -11,6 +11,13 @@ spec:
   - image: preetam6126/web:k8
     imagePullPolicy: Always
     name: web
+    resources:
+      requests:
+        memory: "128Mi"
+        cpu: "100"
+      limit:
+        memory: "128Mi"
+        cpu: "100"
     ports:
     - containerPort: 80
 ---
