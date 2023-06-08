@@ -9,7 +9,7 @@ spec:
   containers:
   - name: catalogue 
     imagePullPolicy: Always
-    image: preetam6126/catalogue:v1
+    image: ngnix
     # resources:
     #   requests:
     #     memory: "128Mi"
