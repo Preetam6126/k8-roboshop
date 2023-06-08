@@ -8,23 +8,23 @@ metadata:
     tier: frontend
 spec:
   containers:
-  - image: preetam6126/web:k81
+  - name: web
     imagePullPolicy: Always
-    name: web
+    image: preetam6126/web:k81
     resources:
       requests:
-        memory: "128Mi"
         cpu: "100m"
+        memory: "128Mi"
       limits:
-        memory: "128Mi"
         cpu: "100m"
+        memory: "128Mi"
     ports:
-    - containerPort: 80
+      - containerPort: 80
 ---
 apiVersion: v1
 kind: Service
 metadata:
-  name: webservice
+  name: web-service
 spec:
   type: LoadBalancer
   selector:
