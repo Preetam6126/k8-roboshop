@@ -11,9 +11,6 @@ spec:
   - name: catalogue
     imagePullPolicy: Always
     image: preetam6126/catalogue:k8
-    envFrom:
-    - configMapRef:
-        name: catalogue-config
     resources:
       requests:
         cpu: "100m"
