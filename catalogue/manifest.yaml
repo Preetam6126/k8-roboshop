@@ -9,7 +9,7 @@ spec:
   containers:
   - name: catalogue 
     imagePullPolicy: Always
-    image: preetam6126/catalogue:k8
+    image: preetam6126/catalogue:v1
     resources:
       requests:
         memory: "128Mi"
@@ -17,8 +17,19 @@ spec:
       limits:
         memory: "128Mi"
         cpu: "100m"
-
-  
+# ---
+# apiVersion: v1
+# kind: Service
+# metadata:
+#   name: catalogue-service
+# spec:
+#   selector:
+#     name: catalogue
+#     tier: app
+#   ports:
+#     - protocol: TCP
+#       port: 80
+#       targetPort: 8080
   
 
       
