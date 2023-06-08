@@ -8,9 +8,9 @@ metadata:
     tier: app
 spec:
   containers:
-  - image: preetam6126/catalogue:v1 
+  - name: catalogue 
     imagePullPolicy: Always
-    name: catalogue
+    image: preetam6126/catalogue:k8
     resources:
       requests:
         memory: "128Mi"
@@ -24,7 +24,6 @@ kind: Service
 metadata:
   name: catalogue-service
 spec:
-  type: LoadBalancer
   selector:
     name: catalogue
     tier: app
